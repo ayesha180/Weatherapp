@@ -77,13 +77,13 @@
   background-color: #ff5722;
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 25px;
+  padding: 10px 50px;
+  font-size: 15px;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  width: 20%;
-  text-align: center;
+  width: 35%;
+  text-align: justify;
 }
 
 .search-bar button:hover {

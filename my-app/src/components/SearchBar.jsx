@@ -1,29 +1,27 @@
-import React, { useState } from "react";
 
-const SearchBar = ({ setLocation }) => {
-  const [input, setInput] = useState(""); 
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (input) {
-      setLocation(input);
-      setInput("");  
+import React from "react";
+const SearchBar = ({ handleSearch, inputRef }) => {
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
     }
   };
 
   return (
     <div className="search-bar">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter city"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}  
-        />
-        <button type="submit">Search</button>
-      </form>
+      <input
+        type="text"
+        ref={inputRef} // Attach the ref to the input
+        placeholder="Enter location"
+        className="search-input"
+        onKeyDown={handleKeyPress} // Add keydown event listener
+      />
+      <button onClick={handleSearch} className="search-button">
+        Search
+      </button>
     </div>
   );
 };
 
 export default SearchBar;
+
