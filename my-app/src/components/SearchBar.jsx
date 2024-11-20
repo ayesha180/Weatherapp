@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 const SearchBar = ({ setLocation }) => {
-  const [input, setInput] = useState("");  // Store the input
+  const [input, setInput] = useState(""); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input) {
       setLocation(input);
-      setInput("");  // Clear the input after submitting
+      setInput("");  
     }
   };
 
@@ -18,7 +18,7 @@ const SearchBar = ({ setLocation }) => {
           type="text"
           placeholder="Enter city"
           value={input}
-          onChange={(e) => setInput(e.target.value)}  // Update input value
+          onChange={(e) => setInput(e.target.value)}  
         />
         <button type="submit">Search</button>
       </form>
